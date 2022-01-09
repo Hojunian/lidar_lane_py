@@ -88,7 +88,7 @@ for file in lane_filename:
     lane_coeffs.append(ransac2.estimator_.coef_)
     lane_coeffs.append(np.asarray([[x.min(), x.max(),x.min(), x.max()]]))
     lane_coeffs = np.asarray(lane_coeffs).reshape(3, 4)
-    # np.save("data/2011_09_26/lane_eq/" + file, lane_coeffs)
+    np.save("data/2011_09_26/lane_eq/" + file, lane_coeffs)
 
 for file in dot_filename:
     points = np.asarray(np.load(dot_root_dir + file)).reshape((-1, 3))
@@ -153,4 +153,4 @@ for file in dot_filename:
     lane_coeffs.append(ransac2.estimator_.coef_)
     lane_coeffs.append(np.asarray([[x.min(), x.max(),x.min(), x.max()]]))
     lane_coeffs = np.asarray(lane_coeffs).reshape(3, 4)
-    # np.save("data/2011_09_26/dot_lane_eq/" + file, lane_coeffs)
+    np.save("data/2011_09_26/dot_lane_eq/" + file, lane_coeffs)
